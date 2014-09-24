@@ -18,4 +18,4 @@ mkdir -p vendor/firefox
 
 # Join and extract all files
 echo "       Extracting files to 'vendor/firefox'..."
-cat firefox.tgz_* | tar -C vendor/firefox -xvz
+cat firefox.tgz_* | tar -xvz -C vendor/firefox
