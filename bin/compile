@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-echo "-----> Installing Firefox Portable"
+echo "-----> Installing Firefox"
 cd $1
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox_31.tar.gz -s -O -ssl3
+curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tar.gz -s -O -ssl3
 mkdir -p vendor/firefox
-tar -C vendor/firefox -xvf firefox_31.tar.gz
+tar -C vendor/firefox -xvf firefox.tar.gz
