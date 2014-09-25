@@ -1,21 +1,15 @@
 #!/usr/bin/env bash
+
 echo "-----> Installing Firefox"
 # Go to app folder
 cd $1
-# Get all firefox tar parts
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_aa -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ab -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ac -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ad -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ae -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_af -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ag -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ah -s -O -ssl3
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tgz_ah -s -O -ssl3
+
+# Get firefox tar
+curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tar.xz -s -O -ssl3
 
 # Create bin folder in vendor
 mkdir -p vendor/firefox
 
-# Join and extract all files
+# Extract all files
 echo "       Extracting files to 'vendor/firefox'..."
-cat firefox.tgz_* | tar -xvz -C vendor/firefox
+tar --preserve-permissions --preserve-order -xvf firefox.tar.xz -C vendor/firefox
