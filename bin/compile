@@ -5,7 +5,7 @@ echo "-----> Installing Firefox"
 cd $1
 
 # Get firefox tar
-curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tar.xz -s -O -ssl3
+curl https://raw.githubusercontent.com/kenshin23/firefox-portable-binary/master/firefox.tar.xz -s -O
 
 # Create bin folder in vendor
 mkdir -p vendor/firefox
